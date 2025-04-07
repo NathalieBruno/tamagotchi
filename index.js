@@ -148,6 +148,10 @@ class Game {
     petDevice.querySelector(".status-fill.energy").style.width = pet.energy + "%";
     petDevice.querySelector(".status-fill.fullness").style.width = pet.fullness + "%";
     petDevice.querySelector(".status-fill.happiness").style.width = pet.happiness + "%";
+
+    petDevice.querySelector(".energy-percent").textContent = pet.energy + "%";
+    petDevice.querySelector(".fullness-percent").textContent = pet.fullness + "%";
+    petDevice.querySelector(".happiness-percent").textContent = pet.happiness + "%";
   }
 
   createPet(pet) {
