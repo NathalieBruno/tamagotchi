@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f3f9;
+  color: #33344a;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  color: #238181;
+  font-size: 72px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  font-family: "Sour Gummy", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+main {
+  display: flex;
+  gap: 30px;
+}
+
+.left-column {
+  width: 30%;
+}
+
+.right-column {
+  width: 70%;
+}
+
+.create-pet-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+.create-pet-section h2 {
+  color: #2c7a74;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-family: "Sour Gummy", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.create-pet-section .form-group {
+  margin-bottom: 15px;
+}
+.create-pet-section .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 20px;
+}
+.create-pet-section .form-group input,
+.create-pet-section .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 20px;
+}
+.create-pet-section .form-group input:focus,
+.create-pet-section .form-group select:focus {
+  outline: none;
+  border-color: #2c7a74;
+}
+.create-pet-section .create-button {
+  background-color: #2c7a74;
+  color: #ffffff;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.create-pet-section .create-button:hover {
+  background-color: #1e5550;
+}
+
+#pets-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 20px;
+  background-color: #ffffff;
+  padding: 50px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#pets-container .empty-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 22px;
+}
+
+.pet-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.8;
+  min-height: 500px;
+  border-radius: 40% 40% 40% 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 18px;
+  transition: transform 0.3s;
+}
+.pet-device:hover {
+  transform: scale(1.03);
+}
+.pet-device.chicken {
+  background-color: #9c6dd3;
+}
+.pet-device.fish {
+  background-color: #31b4a9;
+}
+.pet-device.panda {
+  background-color: #ff9a7b;
+}
+.pet-device.bird {
+  background-color: #7bcfff;
+}
+.pet-device .pet-screen {
+  width: 65%;
+  aspect-ratio: 1;
+  background-color: #327240;
+  border-radius: 10px;
+  margin-top: 60px;
+  position: relative;
+  border: 8px solid #ffbc95;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pet-device .pet-screen .pet-name {
+  position: absolute;
+  font-family: "Sour Gummy", sans-serif;
+  top: 10px;
+  font-size: 28px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+}
+.pet-device .pet-screen .pet-icon {
+  font-size: 50px;
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+.pet-device .pet-status {
+  width: 90%;
+  padding: 5px;
+  margin-top: 5px;
+}
+.pet-device .pet-status .status-group {
+  margin-bottom: 8px;
+}
+.pet-device .pet-status .status-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  text-align: left;
+  color: white;
+}
+.pet-device .pet-status .status-label.status-label.energy-label,
+.pet-device .pet-status .status-label .status-label.fullness-label,
+.pet-device .pet-status .status-label .status-label.happiness-label {
+  color: white;
+}
+.pet-device .pet-status .status {
+  height: 10px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 4px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.pet-device .pet-status .status .status-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+.pet-device .pet-status .status .status-fill.energy {
+  background-color: #ffcc33;
+}
+.pet-device .pet-status .status .status-fill.fullness {
+  background-color: #66ccff;
+}
+.pet-device .pet-status .status .status-fill.happiness {
+  background-color: #ff66aa;
+}
+.pet-device .pet-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 25px;
+}
+.pet-device .pet-buttons .button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pet-device .pet-buttons .button-wrapper button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  margin-bottom: 6px;
+}
+.pet-device .pet-buttons .button-wrapper button:hover {
+  transform: scale(1.2);
+}
+.pet-device .pet-buttons .button-wrapper button:active {
+  transform: scale(1);
+}
+.pet-device .pet-buttons .button-wrapper button[data-action=nap] {
+  background-color: #ffcc33;
+}
+.pet-device .pet-buttons .button-wrapper button[data-action=play] {
+  background-color: #ff66aa;
+}
+.pet-device .pet-buttons .button-wrapper button[data-action=eat] {
+  background-color: #66ccff;
+}
+.pet-device .pet-buttons .button-wrapper .button-label {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+.pet-device::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 28px;
+  height: 28px;
+  background-color: inherit;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.activity-log-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.activity-log-section h2 {
+  color: #2c7a74;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-family: "Sour Gummy", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+.activity-log-section .activity-log {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 15px;
+}
+.activity-log-section .activity-log p {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 20px;
+}
+.activity-log-section .activity-log p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+@media (max-width: 800px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .pets-container {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */

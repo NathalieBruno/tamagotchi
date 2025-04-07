@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamagotchi-spel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Tamagotchi Fam</h1>
+      </header>
+
+      <main>
+        <div class="left-column">
+          <section class="create-pet-section">
+            <h2>Adoptera ett nytt husdjur</h2>
+            <form id="create-pet-form">
+              <div class="form-group">
+                <label for="pet-name">Husdjurets namn:</label>
+                <input type="text" id="pet-name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="pet-type">Typ:</label>
+                <select id="pet-type" required>
+                  <option value="" disabled selected>Välj ett djur</option>
+                  <option value="chicken">Kyckling</option>
+                  <option value="fish">Doris</option>
+                  <option value="panda">Panda</option>
+                  <option value="bird">Fågel</option>
+                </select>
+              </div>
+
+              <button type="submit" class="create-button">Adoptera</button>
+            </form>
+          </section>
+
+          <section class="activity-log-section">
+            <h2>Aktivitetslogg</h2>
+            <div class="activity-log"></div>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section id="pets-container">
+            <p class="empty-state">Du har inte adopterat några husdjur än.</p>
+          </section>
+
+          <template id="pet-template">
+            <div class="pet-device" data-pet-id="">
+              <div class="pet-screen">
+                <div class="pet-name"></div>
+                <div class="pet-icon"></div>
+                <div class="pet-status">
+                  <div class="status-group">
+                    <div class="status-label energy-label">Energi</div>
+                    <div class="status">
+                      <div class="status-fill energy"></div>
+                    </div>
+                  </div>
+                  <div class="status-group">
+                    <div class="status-label fullness-label">Mättnad</div>
+                    <div class="status">
+                      <div class="status-fill fullness"></div>
+                    </div>
+                  </div>
+                  <div class="status-group">
+                    <div class="status-label happiness-label">Lycka</div>
+                    <div class="status">
+                      <div class="status-fill happiness"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pet-buttons">
+                <div class="button-wrapper">
+                  <button data-action="nap" title="Vila"></button>
+                  <div class="button-label">Vila</div>
+                </div>
+                <div class="button-wrapper">
+                  <button data-action="play" title="Leka"></button>
+                  <div class="button-label">Leka</div>
+                </div>
+                <div class="button-wrapper">
+                  <button data-action="eat" title="Mata"></button>
+                  <div class="button-label">Mata</div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
